@@ -1,4 +1,4 @@
-name: Continuous Cntegration
+name: Continuous Integration
 
 on:
   pull_request:
@@ -17,5 +17,5 @@ jobs:
           java-version: '11'
       - name: Gradle configuration
         uses: gradle/gradle-build-action@v2
-      - name: usar el gradle para compilar
+      - name: Run build project
         run: ./gradlew build
