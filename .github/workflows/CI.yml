@@ -1,4 +1,4 @@
-name: Continuous Cntegration
+name: Continuous Integration
 
 on:
   pull_request:
@@ -14,8 +14,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '11'
+          java-version: '17'
       - name: Gradle configuration
         uses: gradle/gradle-build-action@v2
-      - name: usar el gradle para compilar
+      - name: Run build project
         run: ./gradlew build
