@@ -1,0 +1,29 @@
+name: Continues Delivery
+
+on:
+  push:
+    branches: ["develop"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Java Configuration
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - name: Gradle Configuraion
+        uses: gradle/gradle-build-action@v2
+      - name: Build App
+        run: ./gradlew build
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Push Docker image
+        with:
+          image: danielsabana/demo-sec
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
