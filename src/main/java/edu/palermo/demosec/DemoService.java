@@ -5,7 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class DemoService {
 
-  public int getNumber(){
+
+
+  public int getNumber() {
     return 10;
   }
+
 }
