@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "2.7.15"
+    id("org.springframework.boot") version "3.1.0"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
     jacoco
 
@@ -21,7 +21,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.mysql:mysql-connector-j:8.0.31")
-    testImplementation("com.h2database:h2:2.1.214")
+    //testImplementation("com.h2database:h2:2.1.214")
+    implementation("com.h2database:h2:2.1.214")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
