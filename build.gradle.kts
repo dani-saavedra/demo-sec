@@ -19,6 +19,10 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("com.mysql:mysql-connector-j:8.0.31")
+    testImplementation("com.h2database:h2:2.1.214")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
