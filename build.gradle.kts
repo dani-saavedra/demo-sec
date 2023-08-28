@@ -16,13 +16,19 @@ java {
 repositories {
     mavenCentral()
 }
-
+configurations.all {
+    resolutionStrategy.eachDependency {
+        if (requested.name == "snakeyaml") {
+            useVersion("2.0")
+        }
+    }
+}
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.mysql:mysql-connector-j:8.0.31")
     //testImplementation("com.h2database:h2:2.1.214")
-    implementation("com.h2database:h2:2.1.214")
+    implementation("com.h2database:h2:2.2.220")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
