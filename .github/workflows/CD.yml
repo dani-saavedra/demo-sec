@@ -27,8 +27,3 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
